@@ -14,13 +14,18 @@
 },
 ```
 
+这个模板的特点：
+
+1. 支持模块化 module
+2. 支持 sequelize 的自动事务
+
 ### eggular
 
 eggular 的一个特性就是支持 module，一个 module 可以定义 controller/model/service
 
 ### auto transaction
 
-通过 cls-hooked, egg-sequelize-autotrx 完成事物的自动传播，写法上要求使用 `async/await` 且使用 `transaction()` 函数：
+通过 cls-hooked, egg-sequelize-autotrx 完成事务的自动传播，写法上要求使用 `async/await` 且使用 `transaction()` 函数：
 
 ```js
 await this.ctx.model.transaction(async () => {

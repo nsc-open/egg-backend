@@ -1,13 +1,13 @@
 const path = require('path')
 
 module.exports = {
-  city: {
-    path: path.join(__dirname, '../lib/city-module'),
+  notification: {
+    path: path.join(__dirname, '../lib/notification-module'),
     enable: true
   },
 
-  feedback: {
-    path: path.join(__dirname, '../lib/feedback-module'),
+  progress: {
+    path: path.join(__dirname, '../lib/progress-module'),
     enable: true
   }
 
