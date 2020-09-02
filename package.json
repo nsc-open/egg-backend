@@ -1,0 +1,56 @@
+{
+  "name": "egg_backend",
+  "version": "1.0.0",
+  "description": "egg.js backend template",
+  "private": true,
+  "egg": {
+    "declarations": true,
+    "framework": "eggular"
+  },
+  "dependencies": {
+    "cls-hooked": "^4.2.2",
+    "cross-env": "^7.0.2",
+    "egg": "^2.15.1",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize-autotrx": "^1.0.0",
+    "egg-sequelize-module": "^0.0.3",
+    "eggular": "^0.0.6",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.22.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --stdout=../logs/egg_backend/master-stdout.log --stderr=../logs/egg_backend/master-stderr.log --title=egg_backend",
+    "start-prod": "cross-env EGG_SERVER_ENV=prod egg-scripts start --daemon --ignore-stderr --stdout=/var/www/logs/egg_backend/master-stdout.log --stderr=/var/www/logs/egg_backend/master-stderr.log --title=egg_backend",
+    "stop": "egg-scripts stop --title=egg_backend",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "ygjack414@hotmail.com",
+  "license": "MIT"
+}
